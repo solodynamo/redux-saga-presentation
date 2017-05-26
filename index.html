@@ -1,0 +1,163 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>redux-saga: By @solodynamo</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/white.css">
+
+		<style media="screen">
+			.reveal h2.js-text-shadow {
+				text-shadow: 1px 1px 15px rgba(0,0,0,0.7);
+			}
+
+			.reveal section img {
+				background: transparent;
+				border: none;
+				box-shadow: none;
+			}
+
+			.reveal a,
+			.js-highlight {
+				color: #FF5A5F;
+			}
+
+			.reveal a:hover {
+				color: #ffaf86;
+			}
+
+			.reveal .progress span {
+				background-color: #FF5A5F;
+			}
+
+			.reveal .controls .navigate-up,
+			.reveal .controls .navigate-up.enabled {
+				border-bottom-color: #FF5A5F;
+			}
+
+			.reveal .controls .navigate-right,
+			.reveal .controls .navigate-right.enabled {
+				border-left-color: #FF5A5F;
+			}
+
+			.reveal .controls .navigate-down,
+			.reveal .controls .navigate-down.enabled {
+				border-top-color: #FF5A5F;
+			}
+
+			.reveal .controls .navigate-left,
+			.reveal .controls .navigate-left.enabled {
+				border-right-color: #FF5A5F;
+			}
+
+			.reveal li {
+				list-style-type: none;
+			}
+
+			.reveal li::before {
+				content: '▪';
+				display: inline-block;
+				color: #FF5A5F;
+				margin-right: 15px;
+			}
+		</style>
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h4>redux-saga: <span class="js-highlight">by @solodynamo</span></h4>
+				</section>
+				<section>
+					<h3>What is redux-saga?</h3>
+					<ol>
+						<li class="fragment fade-up">redux-saga is a redux middleware for handling side effects.</li>
+						<li class="fragment fade-up">Side-Effects: async operation such as a timer or a HTTP request.</li>
+					</ol>
+				</section>
+			<!-- 	<section>
+					<h3>What is redux-thunk?</h3>
+					<ol>
+						<li class="fragment fade-up">redux-thunk is a redux middleware for handling side effects.</li>
+						<li class="fragment fade-up">Side-Effects: async operation such as a timer or a HTTP request.</li>
+						<li class="fragment fade-up">Waitt!!! Are redux-saga and redux-thunk do same stuff ?</li>
+						<li class="fragment fade-up">Yup, but there exit some git diff btw them.</li>
+					</ol>
+				</section> -->
+				<section>
+							<img src="media/reduxSagaFlow.png" class="stretch"/>
+				</section>
+				<section>
+				<h8>Action Creators or Effects</h8>
+						<ol>
+							<img src="media/action1.png"/>
+						</ol>
+				</section>
+				<section>
+					<h5>Too many, editor</h5>
+				</section>
+				<section>
+					<h8>Benefits : 1. Testing</h8>
+
+							<img src="media/sagatesting.png"/>
+
+				</section>
+				<section>
+					<h6>2. <a href="https://github.com/redux-saga/redux-saga/blob/master/src/internal/io.js">Lots of helper functions.<a></h6>
+					<h6>3. Sagas offer independent place to handle all side effects.<h6>
+				</section>
+				<section>
+					<h8>Where thunk lacked?</h8>
+
+					<ol>
+						<li class="fragment fade-up">Testing</li>
+						<li class="fragment fade-up"><a href="https://github.com/gaearon/redux-thunk/blob/master/src/index.js">No helper functions</a></li>
+						<li class="fragment fade-up">Messy code</li>
+						<img src="media/thunk.png"/>
+					</ol>
+
+				</section>
+				<section>
+					<h8>SAYONARA</h8>
+
+					<ol>
+						<a href="https://gist.github.com/solodynamo/37aa2e340a7fbba672d4e10dc488a2b2">redux-saga:Helper functions/ effects reference.</a>
+					</ol>
+
+				</section>
+				</section>
+			</div>
+		</div>
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: true,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
