@@ -1,1 +1,1 @@
-# Presentation from JSConf 2017
+# Presentation for redux-saga 2017
